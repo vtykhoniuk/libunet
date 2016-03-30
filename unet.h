@@ -10,5 +10,6 @@
 #include <stddef.h>
 
 size_t readn(int sockfd, void *buf, size_t n);
+void writen(int sockfd, const void *buf, size_t n);
 
 #endif // UNET_H
