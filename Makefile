@@ -17,7 +17,7 @@ writen.o: writen.c unet.h
 	$(CC) -c $(CFLAGS) -I$(CERROR_PATH) -L$(CERROR_PATH) $< -lcerror
 
 libunet.a: readn.o writen.o
-	$(AR) -r $@ $<
+	$(AR) -r $@ $?
 	$(RANLIB) $@
 
 all: libunet.a
