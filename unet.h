@@ -17,6 +17,7 @@ typedef struct sockaddr SA;
 
 size_t readn(int sockfd, void *buf, size_t n);
 void writen(int sockfd, const void *buf, size_t n);
+char *sock_ntop(const SA *sa);
 
 int Socket(int domain, int type, int protocol);
 void Bind(int sockfd, struct sockaddr *my_addr, socklen_t addrlen);
