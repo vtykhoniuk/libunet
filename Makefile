@@ -2,28 +2,26 @@ CC              = cc
 CFLAGS          = -std=c99 -I. -O1 -Wall
 AR              = ar
 RANLIB          = ranlib
+LIB             = libunet.a
 
 # This libcerror path should be set in a more fency way
 # Fine for now though
-CERROR_INC     = ../libcerror
+CERROR_INC      = ../libcerror
+CFLAGS          += -I$(CERROR_INC)
+
+SRCS            = $(wildcard *.c)
+OBJS            = $(SRCS:.c=.o)
 
 .PHONY : all clean
 .DEFAULT_GOAL = all
 
-readn.o: readn.c unet.h
-	$(CC) -c $(CFLAGS) -I$(CERROR_INC) $<
-
-writen.o: writen.c unet.h
-	$(CC) -c $(CFLAGS) -I$(CERROR_INC) $<
-
-socket.o: socket.c unet.h
-	$(CC) -c $(CFLAGS) -I$(CERROR_INC) $<
-
-libunet.a: readn.o writen.o socket.o
+$(LIB): $(OBJS)
 	$(AR) -r $@ $?
 	$(RANLIB) $@
 
-all: libunet.a
+lib: $(LIB)
+
+all: lib
 
 clean:
-	rm -f *.o libunet.a
+	rm -f $(OBJS) $(LIB)
