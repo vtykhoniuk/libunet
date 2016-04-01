@@ -9,6 +9,10 @@
    */
 #include <stddef.h>
 
+/* For error codes
+*/
+#include <errno.h>
+
 size_t readn(int sockfd, void *buf, size_t n);
 void writen(int sockfd, const void *buf, size_t n);
 

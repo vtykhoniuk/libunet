@@ -5,16 +5,16 @@ RANLIB          = ranlib
 
 # This libcerror path should be set in a more fency way
 # Fine for now though
-CERROR_PATH     = ../libcerror
+CERROR_INC     = ../libcerror
 
 .PHONY : all clean
 .DEFAULT_GOAL = all
 
 readn.o: readn.c unet.h
-	$(CC) -c $(CFLAGS) -I$(CERROR_PATH) -L$(CERROR_PATH) $< -lcerror
+	$(CC) -c $(CFLAGS) -I$(CERROR_INC) $<
 
 writen.o: writen.c unet.h
-	$(CC) -c $(CFLAGS) -I$(CERROR_PATH) -L$(CERROR_PATH) $< -lcerror
+	$(CC) -c $(CFLAGS) -I$(CERROR_INC) $<
 
 libunet.a: readn.o writen.o
 	$(AR) -r $@ $?
