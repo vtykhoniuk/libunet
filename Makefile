@@ -1,14 +1,10 @@
 CC              = cc
-CFLAGS          = -std=c99 -I. -O1 -Wall
+CFLAGS          = -std=c99 -I. -I/usr/local/include -O1 -Wall
 AR              = ar
 RANLIB          = ranlib
+INSTALL         = install
 LIB             = libunet.a
-
-# This libcerror path should be set in a more fency way
-# Fine for now though
-CERROR_INC      = ../libcerror
-CFLAGS          += -I$(CERROR_INC)
-
+DST             = /usr/local
 SRCS            = $(wildcard *.c)
 OBJS            = $(SRCS:.c=.o)
 
@@ -22,6 +18,10 @@ $(LIB): $(OBJS)
 lib: $(LIB)
 
 all: lib
+
+install:
+	$(INSTALL) $(LIB) $(addprefix $(DST)/, lib)
+	$(INSTALL) unet.h $(addprefix $(DST)/, include)
 
 clean:
 	rm -f $(OBJS) $(LIB)
