@@ -16,7 +16,10 @@ readn.o: readn.c unet.h
 writen.o: writen.c unet.h
 	$(CC) -c $(CFLAGS) -I$(CERROR_INC) $<
 
-libunet.a: readn.o writen.o
+socket.o: socket.c unet.h
+	$(CC) -c $(CFLAGS) -I$(CERROR_INC) $<
+
+libunet.a: readn.o writen.o socket.o
 	$(AR) -r $@ $?
 	$(RANLIB) $@
 
