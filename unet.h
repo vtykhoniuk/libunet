@@ -12,4 +12,6 @@
 size_t readn(int sockfd, void *buf, size_t n);
 void writen(int sockfd, const void *buf, size_t n);
 
+int Socket(int domain, int type, int protocol);
+
 #endif // UNET_H
