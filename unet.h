@@ -9,9 +9,16 @@
    */
 #include <stddef.h>
 
+/* For struct sockaddr_in
+   */
+#include <netinet/in.h>
+
+typedef struct sockaddr SA;
+
 size_t readn(int sockfd, void *buf, size_t n);
 void writen(int sockfd, const void *buf, size_t n);
 
 int Socket(int domain, int type, int protocol);
+void Bind(int sockfd, struct sockaddr *my_addr, socklen_t addrlen);
 
 #endif // UNET_H
