@@ -1,6 +1,5 @@
 #include "unet.h"
 
-// For 'read' call
 #include <unistd.h>
 
 
