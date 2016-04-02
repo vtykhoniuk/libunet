@@ -24,5 +24,6 @@ void Bind(int sockfd, struct sockaddr *my_addr, socklen_t addrlen);
 void Listen(int sockfd, int backlog);
 int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 char *Sock_ntop(const SA *sa);
+void Close(int fd);
 
 #endif // UNET_H
