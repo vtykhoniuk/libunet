@@ -26,6 +26,7 @@ int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 char *Sock_ntop(const SA *sa);
 void Close(int fd);
 void Sock_set_addr(SA *sa, uint32_t addr);
+void Sock_set_wild(SA *sa);
 void Sock_set_port(SA *sa, uint16_t port);
 
 #endif // UNET_H
