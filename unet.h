@@ -25,5 +25,6 @@ void Listen(int sockfd, int backlog);
 int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 char *Sock_ntop(const SA *sa);
 void Close(int fd);
+void Sock_set_addr(SA *sa, uint32_t addr);
 
 #endif // UNET_H
