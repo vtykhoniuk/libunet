@@ -23,5 +23,6 @@ int Socket(int domain, int type, int protocol);
 void Bind(int sockfd, struct sockaddr *my_addr, socklen_t addrlen);
 void Listen(int sockfd, int backlog);
 int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+char *Sock_ntop(const SA *sa);
 
 #endif // UNET_H
