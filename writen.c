@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 
-void writen(int sockfd, const void *buf, size_t n)
+void Writen(int sockfd, const void *buf, size_t n)
 {
     ssize_t written;
     const char *ptr = buf;

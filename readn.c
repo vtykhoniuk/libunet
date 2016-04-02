@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 
-size_t readn(int sockfd, void *buf, size_t n)
+size_t Readn(int sockfd, void *buf, size_t n)
 {
     ssize_t readn;
     char *ptr = buf;
