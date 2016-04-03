@@ -12,7 +12,7 @@ size_t Readn(int sockfd, void *buf, size_t n)
     size_t nleft = n;
 
     while (nleft > 0)
-        /* If we've read anything from the socket, we would
+        /* If we've read something from the socket, we would
            need just to update local counter 'nleft', and
            string pointer 'ptr' */
         if ((readn = read(sockfd, ptr, nleft)) > 0) {
