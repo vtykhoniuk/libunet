@@ -13,9 +13,12 @@
    */
 #include <netinet/in.h>
 
+#define MAXLINE 1024
+
 typedef struct sockaddr SA;
 
 char *sock_ntop(const SA *sa);
+ssize_t readline(int fd, char *buf, size_t buflen);
 
 size_t Readn(int sockfd, void *buf, size_t n);
 void Writen(int sockfd, const void *buf, size_t n);
@@ -28,5 +31,6 @@ void Close(int fd);
 void Sock_set_addr(SA *sa, uint32_t addr);
 void Sock_set_wild(SA *sa);
 void Sock_set_port(SA *sa, uint16_t port);
+size_t Readline(int fd, char *buf, size_t buflen);
 
 #endif // UNET_H
