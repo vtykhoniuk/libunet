@@ -13,9 +13,13 @@
    */
 #include <netinet/in.h>
 
+/* For signal constants */
+#include <signal.h>
+
 #define MAXLINE 1024
 
 typedef struct sockaddr SA;
+typedef void (*Action)(int);
 
 char *sock_ntop(const SA *sa);
 ssize_t readline(int fd, char *buf, size_t buflen);
@@ -32,5 +36,7 @@ void Sock_set_addr(SA *sa, uint32_t addr);
 void Sock_set_wild(SA *sa);
 void Sock_set_port(SA *sa, uint16_t port);
 size_t Readline(int fd, char *buf, size_t buflen);
+pid_t Fork();
+Action Signal(int signum, Action action);
 
 #endif // UNET_H
