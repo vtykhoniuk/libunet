@@ -17,4 +17,3 @@ Action Signal(int signo, Action action)
 
     return oldact.sa_handler;
 }
-
