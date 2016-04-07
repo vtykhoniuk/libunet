@@ -2,7 +2,7 @@
 
 #include <sys/socket.h>
 
-int Accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
+int Accept(int sockfd, SA *addr, socklen_t *addrlen)
 {
     int fd = accept(sockfd, addr, addrlen);
 

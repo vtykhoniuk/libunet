@@ -8,5 +8,5 @@ void Sock_set_port(SA *sa, uint16_t port)
         struct sockaddr_in *sin = (struct sockaddr_in *) sa;
         sin->sin_port = htons(port);
     } else
-        err_quit("sock_set_addr error: unknown address family: %d", sa->sa_family);
+        err_quit("sock_set_port error: unknown address family: %d", sa->sa_family);
 }
