@@ -32,7 +32,7 @@ void Listen(int sockfd, int backlog);
 int Accept(int sockfd, SA *addr, socklen_t *addrlen);
 char *Sock_ntop(const SA *sa);
 void Close(int fd);
-void Sock_set_addr(SA *sa, uint32_t addr);
+void Sock_set_addr(SA *sa, const char * restrict src);
 void Sock_set_wild(SA *sa);
 void Sock_set_port(SA *sa, uint16_t port);
 size_t Readline(int fd, char *buf, size_t buflen);
