@@ -16,6 +16,12 @@
 /* For signal constants */
 #include <signal.h>
 
+/* fd_set, timeval */
+#include <sys/select.h>
+
+/* struct FILE */
+#include <stdio.h>
+
 #define MAXLINE 1024
 
 typedef struct sockaddr SA;
@@ -40,5 +46,7 @@ pid_t Fork();
 Action Signal(int signum, Action action);
 void Inet_pton(int af, const char * restrict src, void * restrict dst);
 void Connect(int socket, const SA *address, socklen_t address_len);
+int Select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, struct timeval *restrict timeout);
+void Fputs(const char *restrict s, FILE *restrict stream);
 
 #endif // UNET_H
