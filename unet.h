@@ -30,6 +30,8 @@ typedef void (*Action)(int);
 char *sock_ntop(const SA *sa);
 ssize_t readline(int fd, char *buf, size_t buflen);
 
+size_t Read(int sockfd, void *buf, size_t n);
+size_t Write(int fildes, void *buf, size_t nbyte);
 size_t Readn(int sockfd, void *buf, size_t n);
 void Writen(int sockfd, const void *buf, size_t n);
 int Socket(int domain, int type, int protocol);
@@ -48,5 +50,6 @@ void Inet_pton(int af, const char * restrict src, void * restrict dst);
 void Connect(int socket, const SA *address, socklen_t address_len);
 int Select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, struct timeval *restrict timeout);
 void Fputs(const char *restrict s, FILE *restrict stream);
+void Shutdown(int socket, int how);
 
 #endif // UNET_H
