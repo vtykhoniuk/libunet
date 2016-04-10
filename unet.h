@@ -22,6 +22,11 @@
 /* struct FILE */
 #include <stdio.h>
 
+/* Bunch of low level syscalls like
+   read, write, fork, close
+   */
+#include <unistd.h>
+
 #define MAXLINE 1024
 
 typedef struct sockaddr SA;

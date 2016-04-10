@@ -1,8 +1,5 @@
 #include "unet.h"
 
-/* fork
-   */
-#include <unistd.h>
 
 pid_t Fork()
 {
@@ -12,4 +9,3 @@ pid_t Fork()
 
     return pid;
 }
-

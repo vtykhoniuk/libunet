@@ -1,7 +1,5 @@
 #include "unet.h"
 
-#include <unistd.h>
-
 
 size_t Readn(int sockfd, void *buf, size_t n)
 {

@@ -1,7 +1,5 @@
 #include "unet.h"
 
-#include <unistd.h>
-
 
 void Writen(int sockfd, const void *buf, size_t n)
 {

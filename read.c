@@ -2,7 +2,6 @@
 
 #include <sys/types.h>
 #include <sys/uio.h>
-#include <unistd.h>
 
 size_t Read(int fildes, void *buf, size_t nbyte)
 {
