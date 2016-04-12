@@ -56,5 +56,7 @@ void Connect(int socket, const SA *address, socklen_t address_len);
 int Select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, struct timeval *restrict timeout);
 void Fputs(const char *restrict s, FILE *restrict stream);
 void Shutdown(int socket, int how);
+size_t Recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
+size_t Sendto(int socket, const void *buffer, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
 
 #endif // UNET_H
