@@ -1,7 +1,5 @@
 #include "unet.h"
 
-#include <sys/types.h>
-#include <sys/socket.h>
 #include <string.h>
 
 int tcp_connect(const char *host, const char *serv)
