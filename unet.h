@@ -63,5 +63,6 @@ size_t Sendto(int socket, const void *buffer, size_t length, int flags, const st
 void Getaddrinfo(const char *hostname, const char *servname, const struct addrinfo *hints, struct addrinfo **res);
 
 int tcp_connect(const char *host, const char *serv);
+int tcp_listen(const char *host, const char *serv);
 
 #endif // UNET_H
