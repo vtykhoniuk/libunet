@@ -7,5 +7,5 @@ void Getaddrinfo(const char *hostname, const char *servname, const struct addrin
 {
     int r = getaddrinfo(hostname, servname, hints, res);
     if (r != 0)
-        err_sys(gai_strerror(r));
+        err_quit("getadrinfo failed for host [%s] service [%s]: %s", hostname, servname, gai_strerror(r));
 }
