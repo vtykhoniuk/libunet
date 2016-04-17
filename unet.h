@@ -27,6 +27,8 @@
    */
 #include <unistd.h>
 
+#include <netdb.h>
+
 #define MAXLINE 1024
 
 typedef struct sockaddr SA;
@@ -58,5 +60,6 @@ void Fputs(const char *restrict s, FILE *restrict stream);
 void Shutdown(int socket, int how);
 size_t Recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
 size_t Sendto(int socket, const void *buffer, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
+void Getaddrinfo(const char *hostname, const char *servname, const struct addrinfo *hints, struct addrinfo **res);
 
 #endif // UNET_H
