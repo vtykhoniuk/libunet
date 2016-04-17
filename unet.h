@@ -62,4 +62,6 @@ size_t Recvfrom(int socket, void *restrict buffer, size_t length, int flags, str
 size_t Sendto(int socket, const void *buffer, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
 void Getaddrinfo(const char *hostname, const char *servname, const struct addrinfo *hints, struct addrinfo **res);
 
+int tcp_connect(const char *host, const char *serv);
+
 #endif // UNET_H
