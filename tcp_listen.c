@@ -6,7 +6,6 @@ int tcp_listen(const char *host, const char *serv)
 {
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
-
     hints.ai_flags = AI_PASSIVE;
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
@@ -16,8 +15,8 @@ int tcp_listen(const char *host, const char *serv)
     if ((error = getaddrinfo(host, serv, &hints, &res)) == -1)
         err_quit("tcp_listen error for host [%s] service [%s]: %s", host, serv, gai_strerror(error));
 
-    struct addrinfo *r = res;
     int sockfd;
+    struct addrinfo *r = res;
     do {
         if ((sockfd = socket(r->ai_family, r->ai_socktype, r->ai_protocol)) == -1)
             continue;

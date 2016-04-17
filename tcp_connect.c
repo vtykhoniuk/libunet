@@ -6,8 +6,8 @@ int tcp_connect(const char *host, const char *serv)
 {
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_UNSPEC;
     hints.ai_flags = AI_CANONNAME;
+    hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
 
     struct addrinfo *res;
