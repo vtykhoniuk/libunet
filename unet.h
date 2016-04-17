@@ -34,7 +34,6 @@
 typedef struct sockaddr SA;
 typedef void (*Action)(int);
 
-char *sock_ntop(const SA *sa);
 ssize_t readline(int fd, char *buf, size_t buflen);
 
 size_t Read(int sockfd, void *buf, size_t n);
@@ -45,7 +44,8 @@ int Socket(int domain, int type, int protocol);
 void Bind(int sockfd, SA *my_addr, socklen_t addrlen);
 void Listen(int sockfd, int backlog);
 int Accept(int sockfd, SA *addr, socklen_t *addrlen);
-char *Sock_ntop(const SA *sa);
+void Sock_ntop(const SA *sa, char **pstr);
+void Sock_ntop_host(const SA *sa, char **pstr);
 void Close(int fd);
 void Sock_set_addr(SA *sa, const char * restrict src);
 void Sock_set_wild(SA *sa);
