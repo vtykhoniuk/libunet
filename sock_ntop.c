@@ -1,8 +1,6 @@
 #include "unet.h"
 
 #include <arpa/inet.h>
-#include <stdlib.h>
-#include <string.h>
 
 #define INET_PORTSTRLEN 6
 #define UNKNOWN_ERR_LEN 32

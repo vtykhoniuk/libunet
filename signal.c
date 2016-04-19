@@ -1,7 +1,5 @@
 #include "unet.h"
 
-#include <string.h>
-
 Action Signal(int signo, Action action)
 {
     struct sigaction act, oldact;

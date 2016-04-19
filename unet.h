@@ -22,6 +22,12 @@
 /* struct FILE */
 #include <stdio.h>
 
+/* memset */
+#include <string.h>
+
+/* exit */
+#include <stdlib.h>
+
 /* Bunch of low level syscalls like
    read, write, fork, close
    */

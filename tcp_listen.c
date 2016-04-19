@@ -1,7 +1,5 @@
 #include "unet.h"
 
-#include <string.h>
-
 int tcp_listen(const char *host, const char *serv)
 {
     struct addrinfo hints;
