@@ -39,12 +39,13 @@
 
 typedef struct sockaddr SA;
 
+
 size_t Read(int fd, void *buf, size_t n);
+size_t Write(int fd, void *buf, size_t n);
 size_t Readn(int fd, void *buf, size_t n);
+void Writen(int fd, const void *buf, size_t n);
 ssize_t readline(int fd, char *buf, size_t buflen);
 size_t Readline(int fd, char *buf, size_t n);
-size_t Write(int fd, void *buf, size_t n);
-void Writen(int fd, const void *buf, size_t n);
 
 int tcp_connect(const char *host, const char *serv);
 int tcp_listen(const char *host, const char *serv);
