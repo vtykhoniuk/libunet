@@ -65,4 +65,6 @@ void Getaddrinfo(const char *hostname, const char *servname, const struct addrin
 int tcp_connect(const char *host, const char *serv);
 int tcp_listen(const char *host, const char *serv);
 
+void Setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
+
 #endif // UNET_H

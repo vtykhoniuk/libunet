@@ -10,6 +10,10 @@ int tcp_listen(const char *host, const char *serv)
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
 
+    /* A value for setsockopt
+    */
+    const int reuse_addr = 1;
+
     struct addrinfo *res;
     int error;
     if ((error = getaddrinfo(host, serv, &hints, &res)) == -1)
@@ -21,6 +25,7 @@ int tcp_listen(const char *host, const char *serv)
         if ((sockfd = socket(r->ai_family, r->ai_socktype, r->ai_protocol)) == -1)
             continue;
 
+        Setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &reuse_addr, sizeof(reuse_addr));
         if (bind(sockfd, r->ai_addr, r->ai_addrlen) == 0)
             break;
 
